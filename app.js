@@ -1,7 +1,21 @@
 const express = require("express");
+const Sequelize = require("sequelize");
 
 const app = express();
 const port = 4000;
+
+const db = new Sequelize("todonode", "postgres", "postgres", {
+  host: "localhost",
+  dialect: "postgres"
+});
+
+db.authenticate()
+  .then(() => {
+    console.log("Sequelize : Connection has been established successfully.");
+  })
+  .catch(err => {
+    console.error("Sequelize : Unable to connect to the database:", err);
+  });
 
 app.use(express.urlencoded({ extended: false }));
 
