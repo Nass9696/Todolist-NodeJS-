@@ -2,9 +2,9 @@
   "name": "todoliste.nodejs",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serv": "Server : ON"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Nass9696/Todolist-NodeJS-/issues"
   },
-  "homepage": "https://github.com/Nass9696/Todolist-NodeJS-#readme"
+  "homepage": "https://github.com/Nass9696/Todolist-NodeJS-#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
