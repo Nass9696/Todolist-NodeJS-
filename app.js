@@ -4,6 +4,7 @@ const app = express();
 const port = 4000;
 
 const db = require("./config/database");
+const Item = require("./models/Item");
 
 db.authenticate()
   .then(() => {
@@ -69,7 +70,9 @@ app.get("/", (req, res) => {
 
 //Send form
 app.post("/", (req, res) => {
-  console.log(req.body.item);
+  Item.findAll().then(items => {
+    console.log("All items :", JSON.stringify(items, null, 4));
+  });
   res.send("Query POST Sucess");
 });
 
